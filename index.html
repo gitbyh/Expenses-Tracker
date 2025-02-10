@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Expense Tracker</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body class="light-mode">
+        <div class="container">
+            <header>
+                <h1>Expense Tracker</h1>
+                <button id="themeToggle" class="theme-toggle">🌙</button>
+            </header>
+
+            <div class="expense-form">
+                <h2>Add New Expense</h2>
+                <form id="expenseForm">
+                    <div class="form-group">
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="item">Item Name:</label>
+                        <input
+                            type="text"
+                            id="item"
+                            required
+                            placeholder="Enter item name"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount (₹):</label>
+                        <input
+                            type="number"
+                            id="amount"
+                            required
+                            placeholder="Enter amount"
+                        />
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        Add Expense
+                    </button>
+                </form>
+            </div>
+
+            <div class="summary-section">
+                <div class="summary-grid">
+                    <div class="summary-card">
+                        <h3>Today</h3>
+                        <p id="todayTotal">₹0</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>This Week</h3>
+                        <p id="weekTotal">₹0</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>This Month</h3>
+                        <p id="monthTotal">₹0</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Overall</h3>
+                        <p id="overallTotal">₹0</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="export-section">
+                <button id="exportBtn" class="btn-secondary">
+                    Download Total Expenses ( in CSV)
+                </button>
+                <div class="date-filter">
+                    <h3 style="text-align: center">or</h3>
+                    <input type="date" id="startDate" />
+                    <input type="date" id="endDate" />
+                    <button id="filterExportBtn" class="btn-secondary">
+                        Download in range (in CSV)
+                    </button>
+                </div>
+            </div>
+
+            <div class="expenses-list">
+                <h2>All Expenses List</h2>
+                <div id="expensesList"></div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
